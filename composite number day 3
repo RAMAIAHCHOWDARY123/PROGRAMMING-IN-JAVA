@@ -1,0 +1,24 @@
+import java.util.*;
+public class org{
+	public static void main(String args[]){
+		Scanner obj=new Scanner(System.in);
+		System.out.println("enter the starting range : ");
+		int a=obj.nextInt();
+		System.out.println("enter the ending range : ");
+		int b=obj.nextInt();
+		int c=0;
+		if(a<0 || b<0 || a==b || a>b)
+			System.out.println("invalid...........");
+		else{
+		for(int i=a+1;i<b;i++){
+			c=0;
+			for(int j=2;j<=i;j++){
+				if(i%j==0)
+					c++;
+			}
+			if(c>1)
+					System.out.println(i);
+		}
+		}
+	}
+}
