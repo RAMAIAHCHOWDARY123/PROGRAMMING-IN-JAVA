@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class primecomposite{
+	public static void main(String args[]){
+		Scanner lol=new Scanner(System.in);
+		try{
+		System.out.println("Enter the total no of numbers :");
+		int no=lol.nextInt(),composite=0,prime=0,flag=0;
+		int[] arr=new int[10];
+		System.out.println("Enter the nos one by one :");
+		for(int i=0;i<no;i++){
+			arr[i]=lol.nextInt();
+			if(arr[i]<0){
+				System.out.println("Invalid Input...");
+				System.exit(0);
+			}			
+		}
+		for(int i=0;i<no;i++){
+			for(int j=2;j<=arr[i]/2;j++){
+				if(arr[i]==1){
+					System.out.println("1 is neither prime nor composite");
+					break;
+				}
+				else if(arr[i]%j!=0){
+					flag=1;//prime
+				}
+				else{
+					flag=0;//composite
+				}
+			}
+			if(flag==1){
+				prime=prime+1;
+			}
+			else{
+				composite=composite+1;
+			}
+		}
+		System.out.println("Prime :"+prime);
+		System.out.println("Composite :"+composite);
+		}
+		catch(InputMismatchException e){
+			System.out.println("Invalid Input...");
+		}
+	}
+}
